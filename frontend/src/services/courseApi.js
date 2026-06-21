@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/v1/courses";
+const API_URL = `${import.meta.env.VITE_API_URL}/courses`;
 
 export const getAllCourses = () => {
   return axios.get(API_URL);
@@ -11,7 +11,7 @@ export const getCourseById = (id) => {
 };
 
 export const getCourseBySlug = (slug) => {
-  return axios.get(`http://localhost:5000/api/v1/courses/slug/${slug}`);
+  return axios.get(`${API_URL}/slug/${slug}`);
 };
 
 export const createCourse = (data) => {
